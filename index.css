@@ -34,6 +34,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #1C293D;
+    height: 100vh;
+    /* width: 100vw; */
 }
 
 #main_container {
@@ -42,8 +44,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
-    width: 100vw;
+    max-width: 500px;
+    height: 100%;
 
     /* padding: 20px; */
 }
@@ -59,8 +61,8 @@ input {
 /* GUIDE BUTTON */
 #guide_button {
     position: absolute;
-    height: 7vw;
-    width: 7vw;
+    height: 35px;
+    width: 35px;
     top: 10px;
     right: 15px;
 
@@ -320,12 +322,13 @@ input {
 }
 
 .temp_selector {
-    width: 40%;
-    height: 55px;
+    /* width: 40%; */
+    padding: 15px 25px;
     border-radius: 15px;
     background-color: transparent;
     border: 1px solid #9D9D9D;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .temp_selector.selected {
@@ -343,7 +346,7 @@ input {
     justify-content: center;
     align-items: center;
     height: 30%;
-    gap: 9vw;
+    gap: 2rem;
 }
 
 #timer {
@@ -354,15 +357,24 @@ input {
 
 #timer input {
     border: none;
-    width: 19vw;
-    height: 60px;
-    font-size: 15vw;
+    width: 100%;
+    font-size: clamp(2rem, 9vw, 3rem);
     background-color: transparent;
-    text-align: center;
+    /* text-align: center; */
 
     &.pause {
         animation: timer_paused 1.8s infinite;
     }
+}
+
+#minutes {
+    text-align: end;
+    padding-right: 10px;
+}
+
+#seconds {
+
+    padding-left: 10px;
 }
 
 
@@ -390,7 +402,7 @@ input {
 }
 
 #timer>#semi_colon {
-    font-size: 56px;
+    font-size: clamp(1rem, 9vw, 3rem);
 
     &.pause {
         animation: timer_paused 1.8s infinite;
@@ -402,22 +414,16 @@ input {
     justify-content: space-between;
     padding: 0px 50px;
     width: 100%;
-    gap: 8vw;
-    height: 16vw;
+    gap: 1rem;
+    /* height: 16vw; */
     /* margin-top: 7vw; */
 }
 
 #start_button.big {
-    width: 50vw;
+    /* width: 50vw; */
     margin: 0 auto;
 
-    & p {
-        font-size: 9vw;
-    }
-
     & div {
-        height: 9vw;
-        width: 9vw;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -429,7 +435,7 @@ input {
     align-items: center;
     justify-content: center;
     gap: 2vw;
-    width: 35vw;
+    /* width: 35vw; */
 
     background-color: var(--color-darkBlue);
     border: 2px solid var(--color-goldish);
@@ -438,12 +444,12 @@ input {
     cursor: pointer;
 
     & p {
-        font-size: 5vw;
+        font-size: clamp(2rem, 5vw, 2.2rem);
     }
 
     & div {
-        height: 5vw;
-        width: 5vw;
+        height: 40px;
+        width: 40px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
